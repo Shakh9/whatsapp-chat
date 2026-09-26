@@ -66,7 +66,6 @@ function App() {
       {' '}
       <Chat
         phoneNumber={phoneNumber}
-        chatId={chatId}
         idInstance={idInstance}
         apiTokenInstance={apiTokenInstance}
         apiUrl={API_URL}

@@ -9,7 +9,7 @@ export function MessageList({ messages }: MessageListProps) {
   if (messages.length === 0) {
     return (
       <div className="message-list message-list--empty">
-        <p>Нет сообщений. Напишите первым!</p>
+        <p>В чате пока нет сообщений</p>
       </div>
     );
   }
