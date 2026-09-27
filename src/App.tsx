@@ -5,7 +5,7 @@ import { ChatSetup } from './components/Chat/ChatSetup';
 import { Chat } from './components/Chat/Chat';
 import './App.css';
 
-const API_URL = 'https://7201.api.green-api.com';
+const API_URL = import.meta.env.VITE_GREEN_API_URL;
 
 function App() {
   const [idInstance, setIdInstance] = useState('');
@@ -49,7 +49,7 @@ function App() {
     return (
       <main>
         {' '}
-        <AuthForm onConnect={handleConnect} /> {isLoading && <p>Подключение...</p>} {error && <p>{error}</p>}{' '}
+        <AuthForm onConnect={handleConnect} isLoading={isLoading} error={error} />{' '}
       </main>
     );
   }
@@ -66,6 +66,7 @@ function App() {
       {' '}
       <Chat
         phoneNumber={phoneNumber}
+        chatId={chatId}
         idInstance={idInstance}
         apiTokenInstance={apiTokenInstance}
         apiUrl={API_URL}
