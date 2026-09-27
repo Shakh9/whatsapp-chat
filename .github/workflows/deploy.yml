@@ -20,6 +20,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
+    env:
+      VITE_GREEN_API_URL: ${{ vars.VITE_GREEN_API_URL }}
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
